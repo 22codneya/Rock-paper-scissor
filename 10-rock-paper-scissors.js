@@ -1,4 +1,4 @@
- //jo score mein store kiya tha voh string thi json ki toh usse vaapis object mein convert kr diya kyuki value store krne k liye JSON use krte h   
+   
         let score= JSON.parse(localStorage.getItem('score')) ||  //if score===null mtlb reset hone p
         {
             wins:0,
@@ -56,8 +56,8 @@
             score.losses +=1;
         }else score.ties +=1; 
 
-        //ab result update krne k baad usse local storage mein store krnege taaki refresh krne p scores khud reset na ho jae
-        localStorage.setItem('score',JSON.stringify(score));//here score object ko json string mein bdlke store kiya kyuki to store data use string also setitem string accept krta h 
+        
+        localStorage.setItem('score',JSON.stringify(score)); 
         updateScoreElement(); //updating the score element
 
          document.querySelector('.js-result')
@@ -65,9 +65,9 @@
 
         document.querySelector('.js-moves')
         .innerHTML= ` You
-    <img src="images/${playerMove}.png"
+    <img src="${playerMove}.png"
     class="move-icon">
-    <img src="images/${compMove}.png" class="move-icon">
+    <img src="${compMove}.png" class="move-icon">
     Computer`;
         }
     
